@@ -15,9 +15,12 @@ function getCurrentTabContent(callback) {
 function uniqueArray(array) {
     /**
      * Make array unique.
-     * @param array - Array to make unique
+     * @param array - Array to make unique or null
      * @return array - Unique array
      */
+    if(!array) {
+        return []
+    }
     return array.filter(function(elem, pos) {
         return array.indexOf(elem) == pos;
     });
@@ -46,8 +49,10 @@ function createDOMContent(info) {
      * @param info - Object with extracted indicators.
      */
     document.getElementById("url").textContent = info.url;
+    createDOMList(info.ipv4, "ipv4");
     createDOMList(info.md5, "md5");
-    createDOMList(info.ip4, "ip4");
+    createDOMList(info.sha1, "sha1");
+    createDOMList(info.sha256, "sha256");
 }
 
 document.addEventListener('DOMContentLoaded', function() {
