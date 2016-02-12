@@ -48,6 +48,7 @@ function createDOMContent(info) {
      * Create content for the popup window.
      * @param info - Object with extracted indicators.
      */
+    document.getElementById("title").textContent = info.title;
     document.getElementById("url").textContent = info.url;
     createDOMList(info.ipv4, "ipv4");
     createDOMList(info.md5, "md5");

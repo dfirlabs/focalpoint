@@ -8,6 +8,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response) {
         var re_sha256 = /\b[A-Fa-f0-9]{64}\b/g;
         var domInfo = {
             url: window.location.href,
+            title: document.title,
             ipv4: allHTML.match(re_ipv4),
             md5: allHTML.match(re_md5),
             sha1: allHTML.match(re_sha1),
